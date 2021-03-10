@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12C.02.04 create your own configurator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Shoe configurator</h1>
+    <p>
+      Welcome to the show-configurator!<br />
+      Please select the features you want on your shoe.
+      You can also change the colors on some areas.
+    </p>
+
+    <div id="configurator">
+      <div id="product-preview">
+        <!-- DONE: add all feature image layers -->
+        <img src="images/cap_basic.png" alt="" class="basic" data-feature="basic"/>
+        <img src="images/cap_drinksholder.png" alt="" class="hide" data-feature="drinksholder"/>
+        <img src="images/cap_led.png" alt="" class="hide" data-feature="led"/>
+        <img src="images/cap_propeller.png" alt="" class="hide" data-feature="propeller"/>
+        <img src="images/cap_shield_back.png" alt="" class="hide" data-feature="shield_back"/>
+        <img src="images/cap_shield_front.png" alt="" class="hide" data-feature="shield_front"/>
+        <img src="images/cap_solarfan.png" alt="" class="hide" data-feature="solarfan"/>
+      </div>
+      <div id="options">
+        Available features
+        <figure class="option" data-feature="bow">
+          <img src="images/feature_bow.png" alt="Bow" />
+          <figcaption>Bow</figcaption>
+        </figure>
+        <figure class="option" data-feature="bow1">
+          <img src="images/feature_bow1.png" alt="Bow1" />
+          <figcaption>Bow1</figcaption>
+        </figure>
+        <figure class="option" data-feature="led">
+          <img src="images/feature_led.png" alt="LED" />
+          <figcaption>LED strip</figcaption>
+        </figure>
+        <figure class="option" data-feature="wings">
+          <img src="images/feature_wings.png" alt="Wings" />
+          <figcaption>Wings</figcaption>
+        </figure>
+      </div>
+      <div id="selected">
+        Selected features
+        <ul>
+          <!-- featureElements are added here! -->
+        </ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
