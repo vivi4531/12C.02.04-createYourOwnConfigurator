@@ -6,7 +6,8 @@
   display: grid;
   grid-template-areas:
     "product options"
-    "features features";
+    "features features"
+    "color-box color_btn";
   gap: 1em;
 }
 
@@ -40,6 +41,7 @@
   border-radius: 1em;
   padding: 1em;
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   justify-content: flex-start;
 }
@@ -120,4 +122,24 @@
   100% {
     transform: translate(0, 0) scale(1);
   }
+}
+
+/********** COLOR SELECT **********/
+#shadow_Image {
+  pointer-events: none;
+}
+
+#color-box {
+  box-shadow: 3px 3px 8px #ddd;
+  border-radius: 1em;
+  padding: 1em;
+  flex-grow: 1;
+}
+
+#container {
+  display: flex;
+}
+
+svg {
+  margin-top: 20px;
 }
