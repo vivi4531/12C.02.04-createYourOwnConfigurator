@@ -9,6 +9,7 @@
     "features features"
     "color-box color_btn";
   gap: 1em;
+  z-index: 0;
 }
 
 #product-preview {
@@ -17,6 +18,7 @@
   border-radius: 1em;
   position: relative;
   transition: opacity ease-in 0.5s;
+  z-index: 1;
 }
 
 #product-preview img {
@@ -27,8 +29,19 @@
   left: 0;
 }
 
+#product-preview svg {
+  pointer-events: none;
+  z-index: 2;
+}
+
+#product-preview g {
+  z-index: 3;
+  pointer-events: all;
+}
+
 #product-preview .hide {
-  opacity: 0;
+  /* opacity: 0; */
+  display: none;
 }
 
 #product-preview img.basic {
@@ -125,7 +138,8 @@
 }
 
 /********** COLOR SELECT **********/
-#shadow_Image {
+#shadow_Image,
+#shadow_Image-2 {
   pointer-events: none;
 }
 
@@ -140,6 +154,15 @@
   display: flex;
 }
 
-svg {
+#color-box svg {
   margin-top: 20px;
+}
+
+.g_to_interact_with {
+  fill: transparent;
+  cursor: pointer;
+}
+
+path {
+  stroke-width: 2;
 }

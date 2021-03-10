@@ -2,14 +2,15 @@
 
 // The model of all features
 const features = {
-  drinksholder: false,
+  bow: false,
+  bow1: false,
   led: false,
-  propeller: false,
-  shield: false,
-  solarfan: false
+  wings: false
 };
 
 window.addEventListener("DOMContentLoaded", start);
+
+let elementToPaint; 
 
 async function start() {
   console.log("start");
@@ -21,7 +22,54 @@ async function start() {
 
   // register toggle-clicks
   document.querySelectorAll(".option").forEach(option => option.addEventListener("click", toggleOption));
+
+  startManipulatingTheSvg();
 }
+
+function startManipulatingTheSvg() {
+
+  // document.addEventListener("click", clll);
+  // function clll(event) {
+  //   console.log(event.target);
+  // }
+
+  document.querySelectorAll(".g_to_interact_with").forEach((eachG) => {
+  console.log(eachG);
+  
+  eachG.addEventListener("click", theClick);
+  eachG.addEventListener("mouseover", theMouseover);
+  eachG.addEventListener("mouseout", theMouseout);
+  });
+  
+   document.querySelectorAll(".color_btn").forEach((each_btn) => {
+  each_btn.addEventListener("click", colorClick);
+  });
+  }
+  
+  console.log("test1"); 
+  
+  function theClick() {
+    console.log("hallo"); 
+  elementToPaint = this;
+  this.style.fill = "grey";
+  }
+  
+  function theMouseover() {
+    console.log("hallo"); 
+  this.style.stroke = "blue";
+  }
+  
+  function theMouseout() {
+    console.log("hallo"); 
+  this.style.stroke = "none";
+  }
+  
+  function colorClick() {
+    console.log("test"); 
+  if (elementToPaint != undefined) {
+  elementToPaint.style.fill = this.getAttribute("fill");
+  }
+  }
 
 function toggleOption(event) {
   const target = event.currentTarget;
