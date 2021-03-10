@@ -11,8 +11,14 @@ const features = {
 
 window.addEventListener("DOMContentLoaded", start);
 
-function start() {
+async function start() {
   console.log("start");
+
+  //Fetch svg
+  let response = await fetch ("vans-01.svg"); 
+  let mySvgData = await response.text(); 
+  document.querySelector("#vans_basic").innerHTML = mySvgData; 
+
   // register toggle-clicks
   document.querySelectorAll(".option").forEach(option => option.addEventListener("click", toggleOption));
 }
