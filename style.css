@@ -19,6 +19,7 @@
   position: relative;
   transition: opacity ease-in 0.5s;
   z-index: 1;
+  pointer-events: none;
 }
 
 #product-preview img {
